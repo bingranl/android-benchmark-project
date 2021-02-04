@@ -1,0 +1,16 @@
+plugins {
+  id 'java-library'
+  id 'java'
+  id 'org.jetbrains.kotlin.jvm'
+}
+dependencies {
+  api 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.10'
+  api 'org.mockito:mockito-core:2.28.2'
+  implementation project(':module06:module342:module3')
+  implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.10'
+  implementation 'org.mockito:mockito-core:2.28.2'
+  testImplementation project(':module06:module342:module3')
+  testImplementation project(':module06:module339:module3:module1')
+  testImplementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.10'
+  testImplementation 'org.mockito:mockito-core:2.28.2'
+}
