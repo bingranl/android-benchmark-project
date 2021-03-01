@@ -1,0 +1,55 @@
+top_abi {
+     tasks = [":module21:module02:compileDebugJavaWithJavac"]
+     gradle-args = ["--configuration-cache", "--info", "--no-build-cache","--watch-fs", "--max-workers=16","--parallel"]
+     apply-abi-change-to = "module01/module02/src/main/java/com/android/example/module01_module02/ClassAAA.kt"
+     measured-build-ops = [ "org.gradle.internal.execution.steps.CaptureStateBeforeExecutionStep$Operation", "org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep$Operation"]
+     warm-ups = 5
+     iterations = 5
+}
+
+top_non_abi {
+     tasks = [":module21:module02:compileDebugJavaWithJavac"]
+     gradle-args = ["--configuration-cache", "--info", "--no-build-cache","--watch-fs", "--max-workers=16","--parallel"]
+     apply-non-abi-change-to = "module01/module02/src/main/java/com/android/example/module01_module02/ClassAAA.kt"
+     measured-build-ops = [ "org.gradle.internal.execution.steps.CaptureStateBeforeExecutionStep$Operation", "org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep$Operation"]
+     warm-ups = 5
+     iterations = 5
+}
+
+middle_non_abi {
+     tasks = [":module21:module02:compileDebugJavaWithJavac"]
+     gradle-args = ["--configuration-cache", "--info", "--no-build-cache","--watch-fs", "--max-workers=16","--parallel"]
+     apply-non-abi-change-to = "module06/module007/module7/src/main/java/com/android/example/module06_module007_module7/ClassAAA.kt"
+     measured-build-ops = [ "org.gradle.internal.execution.steps.CaptureStateBeforeExecutionStep$Operation", "org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep$Operation"]
+     warm-ups = 5
+     iterations = 5
+}
+
+middle_abi {
+     tasks = [":module21:module02:compileDebugJavaWithJavac"]
+     gradle-args = ["--configuration-cache", "--info", "--no-build-cache","--watch-fs", "--max-workers=16","--parallel"]
+     apply-abi-change-to = "module06/module007/module7/src/main/java/com/android/example/module06_module007_module7/ClassAAA.kt"
+     measured-build-ops = [ "org.gradle.internal.execution.steps.CaptureStateBeforeExecutionStep$Operation", "org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep$Operation"]
+     warm-ups = 5
+     iterations = 5
+}
+
+leaf_non_abi {
+     tasks = [":module21:module02:compileDebugJavaWithJavac"]
+     gradle-args = ["--configuration-cache", "--info", "--no-build-cache","--watch-fs", "--max-workers=16","--parallel"]
+     apply-non-abi-change-to = "module06/module353/module2/src/main/java/com/android/example/module06_module353_module2/ClassAAA.kt"
+     measured-build-ops = [ "org.gradle.internal.execution.steps.CaptureStateBeforeExecutionStep$Operation", "org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep$Operation"]
+     warm-ups = 5
+     iterations = 5
+}
+
+leaf_abi {
+     tasks = [":module21:module02:compileDebugJavaWithJavac"]
+     gradle-args = ["--configuration-cache", "--info", "--no-build-cache","--watch-fs", "--max-workers=16","--parallel"]
+     apply-abi-change-to = "module06/module353/module2/src/main/java/com/android/example/module06_module353_module2/ClassAAA.kt"
+     measured-build-ops = [ "org.gradle.internal.execution.steps.CaptureStateBeforeExecutionStep$Operation", "org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep$Operation"]
+     warm-ups = 5
+     iterations = 5
+}
+
+
